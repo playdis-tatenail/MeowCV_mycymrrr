@@ -36,7 +36,7 @@ erk_eye_squint = 0.025
 smile_teeth_width_ratio = 0.38  # ปากต้องกว้างกว่า 38% ของใบหน้า
 smile_teeth_gap = 0.015  
 
-# หมายเหตุ: ใน Tasks API ใหม่ landmarks จะเป็น list ของ object (ไม่มี .landmark)
+
 def cat_shock(face_points):
     """ ตรวจสอบอาการตาค้าง/เบิกตา (Shock) """
     l_top, l_bot = face_points[159], face_points[145]
@@ -102,7 +102,7 @@ def cat_erk(face_points):
 
 def main():
     cam = cv2.VideoCapture(0)
-    webhook_url = "https://discord.com/api/webhooks/1495058713885802736/BnJGYslVH07-xfQ5IMP5Q07lfweErBUx-f8FkixOWM9RKsgLfjxUW5aZfhF-LonE_4qM"
+    webhook_url = "ใส่ web hook discrod"
     discord_bot = DiscordMemeTracker(webhook_url)
 
     while cam.isOpened():
@@ -163,13 +163,12 @@ def main():
             cat_img = cv2.resize(cat_img, (640, 480))
             cv2.imshow("Meme Display", cat_img)
         else:
-            # ถ้าหาไฟล์รูปไม่เจอ ให้สร้างพื้นหลังดำแล้วเขียนข้อความบอก
             blank = np.zeros((480, 640, 3), dtype=np.uint8)
             cv2.putText(blank, f"File Missing: {cat_image_path}", (50, 240),
                         cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 255), 2)
             cv2.imshow("Meme Display", blank)
         
-        if cv2.waitKey(1) & 0xFF == 27: # กด ESC เพื่อออก
+        if cv2.waitKey(1) & 0xFF == 27: 
             break
 
     cam.release()
@@ -181,10 +180,8 @@ if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:
-        # เมื่อมีการกด Ctrl+C ให้พิมพ์ข้อความสั้นๆ แล้วปิดโปรแกรมไปเลย
         print("\n[!] ปิดโปรแกรมโดยผู้ใช้งาน (MeowCV Stopped)")
         try:
-            # พยายามปิดหน้าต่างทั้งหมดถ้ายังค้างอยู่
             import cv2
             cv2.destroyAllWindows()
         except:
