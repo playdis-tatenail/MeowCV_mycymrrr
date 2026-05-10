@@ -7,7 +7,9 @@ pip uninstall mediapipe -y
 pip install -r requirements.txt
 
 จากนั้น 
-python main.py ในterminal 
+python main.py ในterminal
+ถ้าจะรันก็ใช้อันนี้จะได้ใช้เว็บได้ 
+python -m streamlit run webapp.py ในterminal 
 
 
 **** บรรทัดที่ 105 ให้ใส่ web hook ของดิสคอร์ดได้เลย 
