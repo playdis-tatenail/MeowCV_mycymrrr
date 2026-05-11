@@ -22,7 +22,8 @@ pip install -r requirements.txt
 
 จากนั้น 
 python main.py ในterminal
-ถ้าจะรันก็ใช้อันนี้จะได้ใช้เว็บได้ 
+ถ้าจะรันก็ใช้อันนี้จะได้ใช้เว็บได้
+pip install streamlit 
 python -m streamlit run webapp.py ในterminal 
 
 
